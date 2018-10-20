@@ -3,11 +3,19 @@
   font-family: 'Roboto', sans-serif; }
 
 body, html {
-  height: 100%; }
+  height: 100%;
+  background: #f3f3f3; }
 
 ul {
   list-style: none;
   padding: 0; }
+
+header, .reviews {
+  width: 85%;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  max-width: 1700px; }
 
 a {
   text-decoration: none;
@@ -17,7 +25,8 @@ nav {
   padding: 0.5em 2em;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  background: #fff; }
   nav .logo {
     height: 3em; }
 
@@ -97,24 +106,38 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center; }
-  .previewHeader > a {
-    color: #fff;
-    flex-basis: 15%;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #e39959;
-    border-bottom: solid #cd7c37; }
+
+.orangeBtn {
+  color: #fff;
+  flex-basis: 15%;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e39959;
+  border-bottom: solid #cd7c37; }
 
 .smallText {
   font-size: 0.8em;
   color: #7f7f7f;
   margin: 0 10px; }
 
-.medText {
+.medText, .skills li, .contractorContact li {
   color: #7f7f7f;
   margin: 0; }
+
+.skills {
+  display: flex; }
+  .skills li {
+    margin-right: 5px; }
+
+.contractorContact {
+  margin: 20px;
+  margin-right: 0; }
+  .contractorContact ul {
+    margin: 0; }
+  .contractorContact li:not(:last-child) {
+    margin: 10px 0; }
 
 .mainList h2 {
   margin-bottom: 0;
@@ -146,6 +169,27 @@ nav {
 
 .listPage {
   display: flex; }
+
+header {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 3em; }
+  header h1 {
+    margin-bottom: 0; }
+  header .orangeBtn {
+    min-width: 12em; }
+
+header h1, .reviews h1 {
+  font-size: 3em; }
+
+.reviews h1 {
+  border-top: solid 2px #7f7f7f;
+  margin-top: 0.5em;
+  padding-top: 0.5em; }
+.reviews li {
+  padding: 20px;
+  background: #f3f3f3;
+  margin: 10px; }
 
 @media screen and (max-width: 700px) {
   .listPage {
