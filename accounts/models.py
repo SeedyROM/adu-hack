@@ -23,14 +23,14 @@ class User(UUIDModel, AbstractUser):
     user_type = models.PositiveSmallIntegerField(
         choices=TYPE_CHOICES, default=0
     )
-    contractor_information = models.OneToOneField(
+    contractor_information = models.ForeignKey(
         'accounts.ContractorInformation',
         blank=True,
         null=True,
         on_delete=models.CASCADE,
         related_name='user',
     )
-    property_owner_information = models.OneToOneField(
+    property_owner_information = models.ForeignKey(
         'accounts.PropertyOwnerInformation',
         blank=True,
         null=True,
@@ -54,6 +54,9 @@ class User(UUIDModel, AbstractUser):
 
 class PropertyOwnerInformation(UUIDModel):
     reviews = models.ManyToManyField('connections.Review', blank=True)
+
+    def __str__(self):
+        return f'{self.user.username}\'s information'
 
     class Meta:
         verbose_name = 'Property Owner'
