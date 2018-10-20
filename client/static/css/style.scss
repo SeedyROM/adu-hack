@@ -48,7 +48,7 @@ nav {
     color: #f0d371;
   }
   input {
-    width: 50%;
+    width: 100%;
     font-size: 2em;
     padding: 7px;
   }
@@ -166,6 +166,10 @@ nav {
     background: #fff;
     margin-right: 0;
     margin-bottom: 1em;
+  }
+
+  li > p {
+    margin-bottom: 0.25rem;
   }
 }
 

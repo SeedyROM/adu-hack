@@ -8,7 +8,7 @@
             <h2 class="expand">Filter Services</h2>
             <ul>
                 {% for service in services %}
-                    <li><input type="checkbox" value="{{ service.name }}">{{ service.name }}</li>
+                <li><input type="checkbox" value="{{ service.name }}">{{ service.name }}</li>
                 {% endfor %}
             </ul>
         </div>
@@ -25,15 +25,15 @@
     </aside>
 
     <section class="mainList">
-        {% for contractor in contractors %}
-            {{ contractor.name }}
-        {% endfor %}
         <p class="smallText">562 search results</p>
         <ul>
+            {% for contractor in contractors %}
             <li>
                 <div class="previewHeader">
                     <div>
-                        <a><h2>Smith Jones</h2></a>
+                        <a>
+                            <h2>{{ contractor.name }}</h2>
+                        </a>
                         <div class="rating">
                             <img src="{% static 'imgs/filled_star.svg' %}">
                             <img src="{% static 'imgs/filled_star.svg' %}">
@@ -48,42 +48,7 @@
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
                     ex ea commodo consequat...</p>
             </li>
-            <li>
-                <div class="previewHeader">
-                    <div>
-                        <a><h2>Smith Jones</h2></a>
-                        <div class="rating">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/empty_star.svg' %}">
-                            <img src="{% static 'imgs/empty_star.svg' %}">
-                        </div>
-                    </div>
-                    <a href="#">Contact</a>
-                </div>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
-                    ex ea commodo consequat...</p>
-            </li>
-            <li>
-                <div class="previewHeader">
-                    <div>
-                        <a><h2>Smith Jones</h2></a>
-                        <div class="rating">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/filled_star.svg' %}">
-                            <img src="{% static 'imgs/empty_star.svg' %}">
-                            <img src="{% static 'imgs/empty_star.svg' %}">
-                        </div>
-                    </div>
-                    <a href="#">Contact</a>
-                </div>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
-                    ex ea commodo consequat...</p>
-            </li>
+            {% endfor %}
         </ul>
     </section>
 
@@ -91,10 +56,8 @@
 {% endblock content %}
 
 {% block scripts %}
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 
 <script>
     $('.expand').click(function () {

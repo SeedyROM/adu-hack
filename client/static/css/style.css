@@ -38,7 +38,7 @@ nav {
   .jumbo a {
     color: #f0d371; }
   .jumbo input {
-    width: 50%;
+    width: 100%;
     font-size: 2em;
     padding: 7px; }
 
@@ -130,6 +130,9 @@ nav {
   background: #fff;
   margin-right: 0;
   margin-bottom: 1em; }
+
+.mainList li > p {
+  margin-bottom: 0.25rem; }
 
 .stars li:nth-child(1)::after {
   background-image: url("../imgs/stars_5.svg"); }

@@ -3,11 +3,12 @@
 {% block content %}
 <section class="jumbo">
     <h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
-    <input type="text" placeholder="Search for contractors...">
+    <form action="{% url 'connections:search' %}" method="GET">
+        <input type="text" name="q" placeholder="Search for contractors...">
+    </form>
     <p>Contractor? <a href="#">Login Here</a></p>
 </section>
 <section class="works">
-
     <ul>
         <li>
             <div class="aboutImg"></div>
