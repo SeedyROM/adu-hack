@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect
 from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from accounts.models import User, PropertyOwnerInformation, ContractorInformation
 
 
@@ -63,3 +64,8 @@ def login_user(request):
 def log_out(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
+@login_required
+def profile(request):
+    return render(request, 'accounts/profile.html', {})
