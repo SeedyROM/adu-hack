@@ -1,24 +1,50 @@
-from django.shortcuts import render
-from .models import User, PropertyOwnerInformation, ContractorInformation
+from django.shortcuts import render, reverse
+from .models import User, HomeOwnerInformation, ContractorInformation
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login
 from django.http import HttpResponse
+from django.contrib.auth import logout as user_logout
 
-# Create your views here.
+@login_required
 def index(request):
-    pass
+	return render(request, 'accounts/index.html', {})
 
 def login(request):
-    pass
+	if request.method == 'POST':
+		username = request['username']
+		password = request['password']
+		authenticate(username, password)
+		if user:
+			if user.is_active:
+				login(request, user)
+			else:
+				HttpResponse("You are not an active user.")
+		else:
+			HttpResponse("Invalid login details")
+				
 
 def logout(request):
-    pass
+	user_logout(request)
 
 def create_acc(request):
-    pass
-
+	if request.method == 'POST':
+		in_email = request['email']
+		in_username = request['username']
+		in_password = request['password']
+		in_user = User(username=in_username, email=in_email, password=in_password)
+		in_user.save()
+	return HttpResponse(reverse('accounts:index'))
+	
+	
 def update_info(request):
-    pass
-
+	user = request.user
+	if request.method == 'POST':
+		pass
+	
+		
+		
+@login_required
 def review(request):
-    pass
+	user = request.user
+	
+	pass
