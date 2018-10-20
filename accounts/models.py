@@ -21,9 +21,9 @@ class User(UUIDModel, AbstractUser):
     user_type = models.PositiveSmallIntegerField(
         choices=TYPE_CHOICES, default=0)
     contractor_information = models.ForeignKey(
-        'accounts.ContractorInformation', blank=True, null=True)
+        'accounts.ContractorInformation', blank=True, null=True, on_delete=models.CASCADE)
     homeowner_information = models.ForeignKey(
-        'accounts.HomeOwnerInformation', blank=True, null=True)
+        'accounts.HomeOwnerInformation', blank=True, null=True, on_delete=models.CASCADE)
 
     @property
     def information(self):

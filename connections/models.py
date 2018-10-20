@@ -1,3 +1,5 @@
 from django.db import models
+from core.models import UUIDModel
 
-# Create your models here.
+class Site(UUIDModel):
+    pass
