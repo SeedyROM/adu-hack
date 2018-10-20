@@ -11,18 +11,24 @@ class Service(UUIDModel):
     name = models.CharField(max_length=256)
     description = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class Job(UUIDModel):
     completed = models.BooleanField(default=False)
 
     site = models.OneToOneField(Site, on_delete=models.CASCADE)
-    property_owner = models.ForeignKey('accounts.PropertyOwnerInformation', on_delete=models.CASCADE)
-    contractor = models.ForeignKey('accounts.ContractorInformation', on_delete=models.CASCADE)
+    property_owner = models.ForeignKey(
+        'accounts.PropertyOwnerInformation', on_delete=models.CASCADE)
+    contractor = models.ForeignKey(
+        'accounts.ContractorInformation', on_delete=models.CASCADE)
     services = models.ManyToManyField(Service)
 
 
 class Review(UUIDModel):
     rating = models.PositiveSmallIntegerField(null=True, blank=True)
     description = models.TextField()
-    contractor = models.OneToOneField('accounts.ContractorInformation', on_delete=models.CASCADE)    
+    contractor = models.OneToOneField(
+        'accounts.ContractorInformation', on_delete=models.CASCADE)
     job = models.OneToOneField(Job, on_delete=models.CASCADE)
