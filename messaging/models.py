@@ -8,7 +8,7 @@ class Chat(UUIDModel, models.Model):
     timestamp = models.DateTimeField(default=timezone.now)
 
     def is_read(self):
-        return self.messages.filter(is_read=False).exists()
+        return self.messages.all().filter(is_read=False).exists()
 
     class Meta:
         ordering = ['timestamp']
