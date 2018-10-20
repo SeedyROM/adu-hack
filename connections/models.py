@@ -3,13 +3,19 @@ from core.models import UUIDModel, GeoLocationModel
 
 
 class Site(UUIDModel, GeoLocationModel):
+    """Work site model, contains geocoded coords and address
+    """
     def __str__(self):
         return self.address
 
 
 class Service(UUIDModel):
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
     description = models.TextField()
+
+    @staticmethod
+    def top_5():
+        return Service.objects.all()[:5]
 
     def __str__(self):
         return self.name
