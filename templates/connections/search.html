@@ -25,6 +25,9 @@
     </aside>
 
     <section class="mainList">
+        {% for contractor in contractors %}
+            {{ contractor.name }}
+        {% endfor %}
         <p class="smallText">562 search results</p>
         <ul>
             <li>

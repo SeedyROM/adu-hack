@@ -51,6 +51,10 @@ class User(UUIDModel, AbstractUser):
         else:
             raise InvalidUserType('Invalid user type!')
 
+    @property
+    def name(self):
+        return f'{self.first_name} {self.last_name}'
+
 
 class PropertyOwnerInformation(UUIDModel):
     reviews = models.ManyToManyField('connections.Review', blank=True)
