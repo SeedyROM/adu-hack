@@ -4,11 +4,20 @@
 
 body, html {
   height: 100%;
+  background: #f3f3f3;
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+header, .reviews {
+  width: 85%;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  max-width: 1700px;
 }
 
 a {
@@ -21,6 +30,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
   border-bottom: 1px solid #cccc;
   .logo {
     height: 3em;
@@ -52,13 +62,17 @@ nav {
   a {
     color: #f0d371;
   }
+  form {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  }
   input {
     width: 100%;
     font-size: 1.5em;
     padding: 0.5em 1.25em;
     outline: none;
-    border: none;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
     border-radius: 60px;
     border: 3px solid #47E;
   }
@@ -75,8 +89,6 @@ nav {
     border-radius: 5px;
   }
 }
-
-//linear-gradient(#ffffff2b, #ffffff2b), url(../imgs/homeImg.jpg) center
 
 .aboutImg {
   height: 8em;
@@ -152,17 +164,31 @@ nav {
 .previewHeader {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  > a {
-    color: #fff;
-    flex-basis: 15%;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #e39959;
-    border-bottom: solid #cd7c37;
-  }
+  align-items: center;
+}
+
+.orangeBtn {
+  color: #fff;
+  flex-basis: 15%;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e39959;
+  border-bottom: solid #cd7c37;
+//=======
+//  align-items: flex-start;
+//  > a {
+//    color: #fff;
+//    flex-basis: 15%;
+//    height: 2em;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    background: #e39959;
+//    border-bottom: solid #cd7c37;
+//  }
+//>>>>>>> 278a6b1c7be5738c1985ed89e1ebb42d8b8159a1
 }
 
 .smallText {
@@ -174,6 +200,28 @@ nav {
 .medText {
   color: #7f7f7f;
   margin: 0;
+}
+
+.skills {
+  display: flex;
+  li {
+    @extend .medText;
+    margin-right: 5px;
+  }
+}
+
+.contractorContact {
+  margin: 20px;
+  margin-right: 0;
+  ul {
+    margin: 0;
+  }
+  li {
+    @extend .medText;
+    &:not(:last-child) {
+      margin: 10px 0;
+    }
+  }
 }
 
 .mainList {
@@ -211,11 +259,34 @@ nav {
   display: flex;
 }
 
-// .sidebar {
-// }
+header {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 3em;
+  h1 {
+    margin-bottom: 0;
+  }
+  .orangeBtn {
+    min-width: 12em;
+  }
+}
 
-// .mainList {
-// }
+header h1, .reviews h1 {
+  font-size: 3em;
+}
+
+.reviews {
+  h1 {
+    border-top: solid 2px #7f7f7f;
+    margin-top: 0.5em;
+    padding-top: 0.5em;
+  }
+  li {
+    padding: 20px;
+    background: #f3f3f3;
+    margin: 10px;
+  }
+}
 
 @media screen and (max-width: 700px) {
   .listPage {
@@ -247,6 +318,9 @@ nav {
   }
 
   @media screen and (max-width: 700px) {
+    .sidebar {
+      grid-area: s;
+    }
     .listPage {
       grid-template-areas: "s s s s" "c c c c";
       grid-template-rows: auto 2fr;

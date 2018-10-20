@@ -1,32 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="jumbo">
-    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
-    <form action="{% url 'connections:search' %}" method="GET">
-        <input type="text" name="q" placeholder="Search for contractors...">
-    </form>
-    <p>Contractor? &nbsp;&nbsp;<a href="#">Login Here</a></p>
-</section>
-<section class="works">
-    <ul>
-        <li>
-            <div class="aboutImg"></div>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip ex ea
-                commodo consequat</p>
-        </li>
-        <li>
-            <div class="aboutImg"></div>
-            <p>facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
-                praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-                cons ectetuer </p>
-        </li>
-        <li>
-            <div class="aboutImg"></div>
-            <p>adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-                erat volutpat. Ut wisi enim ad minim veniam. suscipit lobortis nisl ut aliquip ex ea commodo
-                consequat.</p>
-        </li>
-    </ul>
-</section>
+    <section class="jumbo">
+        <h1>Lorem ipsum dolor sit amet, consectetur adipiscing</h1>
+        <form action="{% url 'connections:search' %}" method="GET">
+            <input type="text" name="q" placeholder="Search for contractors...">
+        </form>
+        <p>Contractor? &nbsp;&nbsp;<a href="#">Login Here</a></p>
+    </section>
+    <section class="works">
+        <ul>
+            <li>
+                <div class="aboutImg"></div>
+                <p>Search top qualified contractors with experience delivering the services that you need to complete
+                    your project.</p>
+            </li>
+            <li>
+                <div class="aboutImg"></div>
+                <p>Let us do the heavy lifting! Create a job posting with the description and qualifications needed to get the job done. We
+                will post it to the best qualified contractors to connect to get the job done.</p>
+            </li>
+            <li>
+                <div class="aboutImg"></div>
+                <p>When you and your selected contractor are ready,
+                    we setup and manage an escrow account with your contractor
+                    so that you can feel confident in the job being done well.
+                </p>
+            </li>
+        </ul>
+    </section>
 {% endblock content %}

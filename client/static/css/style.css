@@ -3,11 +3,19 @@
   font-family: 'Roboto', sans-serif; }
 
 body, html {
-  height: 100%; }
+  height: 100%;
+  background: #f3f3f3; }
 
 ul {
   list-style: none;
   padding: 0; }
+
+header, .reviews {
+  width: 85%;
+  margin: auto;
+  padding: 20px;
+  background: #fff;
+  max-width: 1700px; }
 
 a {
   text-decoration: none;
@@ -18,6 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #fff;
   border-bottom: 1px solid #cccc; }
   nav .logo {
     height: 3em; }
@@ -40,13 +49,16 @@ nav {
   border-bottom: solid #e9e9e9; }
   .jumbo a {
     color: #f0d371; }
+  .jumbo form {
+    width: 50%;
+    display: flex;
+    justify-content: center; }
   .jumbo input {
     width: 100%;
     font-size: 1.5em;
     padding: 0.5em 1.25em;
     outline: none;
-    border: none;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
     border-radius: 60px;
     border: 3px solid #47E; }
   .jumbo h1 {
@@ -115,37 +127,49 @@ nav {
 .previewHeader {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; }
-  .previewHeader > a {
-    color: #fff;
-    flex-basis: 15%;
-    height: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #e39959;
-    border-bottom: solid #cd7c37; }
+  align-items: center; }
+
+.orangeBtn {
+  color: #fff;
+  flex-basis: 15%;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e39959;
+  border-bottom: solid #cd7c37; }
 
 .smallText {
   font-size: 0.8em;
   color: #7f7f7f;
   margin: 1.5px 10px; }
 
-.medText {
+.medText, .skills li, .contractorContact li {
   color: #7f7f7f;
   margin: 0; }
+
+.skills {
+  display: flex; }
+  .skills li {
+    margin-right: 5px; }
+
+.contractorContact {
+  margin: 20px;
+  margin-right: 0; }
+  .contractorContact ul {
+    margin: 0; }
+  .contractorContact li:not(:last-child) {
+    margin: 10px 0; }
 
 .mainList h2 {
   margin-top: 0;
   margin-bottom: 0.75em;
   color: #e39959; }
-
 .mainList li {
   padding: 20px;
   background: #fff;
   margin-right: 0;
   margin-bottom: 1em; }
-
 .mainList li > p {
   margin-bottom: 0.25rem; }
 
@@ -172,27 +196,54 @@ nav {
 .listPage {
   display: flex; }
 
+header {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 3em; }
+  header h1 {
+    margin-bottom: 0; }
+  header .orangeBtn {
+    min-width: 12em; }
+
+header h1, .reviews h1 {
+  font-size: 3em; }
+
+.reviews h1 {
+  border-top: solid 2px #7f7f7f;
+  margin-top: 0.5em;
+  padding-top: 0.5em; }
+.reviews li {
+  padding: 20px;
+  background: #f3f3f3;
+  margin: 10px; }
+
 @media screen and (max-width: 700px) {
   .listPage {
     flex-direction: column; }
+
   .sidebar {
     display: flex;
     justify-content: center;
     margin: 10px; } }
-
 @media screen and (max-height: 600px) {
   .listPage {
     height: auto; } }
-
 @supports (display: grid) {
   .listPage {
     display: grid;
     grid-template-areas: "s c c c" "s c c c";
     grid-gap: 15px; }
+
   .mainList {
     grid-area: c; }
+
   @media screen and (max-width: 700px) {
+    .sidebar {
+      grid-area: s; }
+
     .listPage {
       grid-template-areas: "s s s s" "c c c c";
       grid-template-rows: auto 2fr;
       justify-content: center; } } }
+
+/*# sourceMappingURL=style.css.map */
