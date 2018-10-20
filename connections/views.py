@@ -1,11 +1,12 @@
 from django.shortcuts import render
 
-# Create your views here.
-def search(request):
-    pass
+from accounts.models import ContractorInformation
+from connections.models import Service
 
-def results(request):
-    pass
-
-def profile(request):
-    pass
+def mock_search(request):
+    contractors = ContractorInformation.objects.all()
+    services = Service.top_5
+    
+    return render(request, 'connections/search.html', {
+        'contractors': contractors,
+    })

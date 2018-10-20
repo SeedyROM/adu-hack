@@ -10,8 +10,13 @@ class Site(UUIDModel, GeoLocationModel):
 
 
 class Service(UUIDModel):
-    name = models.CharField(max_length=256)
+    name = models.CharField(max_length=256, unique=True)
     description = models.TextField()
+
+    @property
+    @staticmethod
+    def top_5(self):
+        return self.objects.all()[:5]
 
     def __str__(self):
         return self.name
