@@ -6,7 +6,9 @@
         <form action="{% url 'connections:search' %}" method="GET">
             <input type="text" name="q" placeholder="Search for contractors...">
         </form>
-        <p>Contractor? &nbsp;&nbsp;<a href="{% url 'accounts:login' %}">Login Here</a></p>
+        {% if not user.is_authenticated %}
+            <p>Contractor? &nbsp;&nbsp;<a href="{% url 'accounts:login' %}">Login Here</a></p>
+        {% endif %}
     </section>
     <section class="works">
         <ul>
@@ -17,8 +19,9 @@
             </li>
             <li>
                 <div class="aboutImg"></div>
-                <p>Let us do the heavy lifting! Create a job posting with the description and qualifications needed to get the job done. We
-                will post it to the best qualified contractors to connect to get the job done.</p>
+                <p>Let us do the heavy lifting! Create a job posting with the description and qualifications needed to
+                    get the job done. We
+                    will post it to the best qualified contractors to connect to get the job done.</p>
             </li>
             <li>
                 <div class="aboutImg"></div>

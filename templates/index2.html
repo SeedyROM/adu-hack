@@ -6,7 +6,9 @@
         <form action="{% url 'connections:searchTwo' %}" method="GET">
             <input type="text" name="q" placeholder="Search for jobs...">
         </form>
-        <p>Contractor? &nbsp;&nbsp;<a href="#">Login Here</a></p>
+        {% if not user.is_authenticated %}
+            <p>Homeowner? &nbsp;&nbsp;<a href="#">Login Here</a></p>
+        {% endif %}
     </section>
     <section class="works">
         <ul>
@@ -17,8 +19,9 @@
             </li>
             <li>
                 <div class="aboutImg"></div>
-                <p>Let us do the heavy lifting! Create a job posting with the description and qualifications needed to get the job done. We
-                will post it to the best qualified contractors to connect to get the job done.</p>
+                <p>Let us do the heavy lifting! Create a job posting with the description and qualifications needed to
+                    get the job done. We
+                    will post it to the best qualified contractors to connect to get the job done.</p>
             </li>
             <li>
                 <div class="aboutImg"></div>

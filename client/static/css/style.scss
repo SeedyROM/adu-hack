@@ -40,6 +40,12 @@ input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 30px white inset;
 }
 
+.mainList .contract {
+  h2 {
+    margin-bottom: 0.2em;
+  }
+}
+
 .center {
   height: calc(100% - 7em);
   display: flex;
