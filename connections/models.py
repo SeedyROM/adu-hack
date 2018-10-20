@@ -32,7 +32,7 @@ class Job(UUIDModel):
     )
     contractor = models.ForeignKey(
         'accounts.ContractorInformation', on_delete=models.CASCADE, blank=True, null=True)
-    services = models.ManyToManyField(Service)
+    services = models.ManyToManyField(Service, blank=True, null=True)
     description = models.TextField()
 
 
