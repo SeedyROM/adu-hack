@@ -6,7 +6,7 @@
         <form action="{% url 'connections:search' %}" method="GET">
             <input type="text" name="q" placeholder="Search for contractors...">
         </form>
-        <p>Contractor? &nbsp;&nbsp;<a href="#">Login Here</a></p>
+        <p>Contractor? &nbsp;&nbsp;<a href="{% url 'accounts:login' %}">Login Here</a></p>
     </section>
     <section class="works">
         <ul>

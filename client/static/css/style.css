@@ -36,6 +36,7 @@ input:-webkit-autofill {
   justify-content: center;
   align-items: center; }
   .center span {
+    text-align: center;
     color: #7f7f7f; }
     .center span a {
       color: #e39959; }
@@ -285,7 +286,9 @@ header h1, .reviews h1 {
   margin: 10px; }
 
 .center .loginWrap {
-  height: auto; }
+  text-align: center;
+  height: auto;
+  padding-bottom: 10px; }
   .center .loginWrap form {
     padding: 20px;
     padding-bottom: 0; }
