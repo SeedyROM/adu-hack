@@ -112,6 +112,10 @@ nav {
   color: #7f7f7f;
   margin: 0 10px; }
 
+.medText {
+  color: #7f7f7f;
+  margin: 0; }
+
 .mainList h2 {
   margin-bottom: 0;
   color: #e39959; }
@@ -140,6 +144,20 @@ nav {
   background: #f3f3f3;
   height: 100%; }
 
+.listPage {
+  display: flex; }
+
+@media screen and (max-width: 700px) {
+  .listPage {
+    flex-direction: column; }
+
+  .sidebar {
+    display: flex;
+    justify-content: center;
+    margin: 10px; } }
+@media screen and (max-height: 600px) {
+  .listPage {
+    height: auto; } }
 @supports (display: grid) {
   .listPage {
     display: grid;
@@ -150,15 +168,12 @@ nav {
     grid-area: s; }
 
   .mainList {
-    grid-area: c; } }
-@media screen and (max-width: 700px) {
-  .listPage {
-    grid-template-areas: "s s s s" "c c c c";
-    grid-template-rows: auto 2fr;
-    justify-content: center; }
+    grid-area: c; }
 
-  .sidebar {
-    display: flex;
-    justify-content: center; } }
+  @media screen and (max-width: 700px) {
+    .listPage {
+      grid-template-areas: "s s s s" "c c c c";
+      grid-template-rows: auto 2fr;
+      justify-content: center; } } }
 
 /*# sourceMappingURL=style.css.map */
