@@ -49,7 +49,7 @@ class User(UUIDModel, AbstractUser):
 
 
 class PropertyOwnerInformation(UUIDModel):
-    reviews = models.ManyToManyField('connections.Review')
+    reviews = models.ManyToManyField('connections.Review', blank=True)
 
     class Meta:
         verbose_name = 'Property Owner'
