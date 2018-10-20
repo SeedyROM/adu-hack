@@ -20,6 +20,7 @@ class Job(UUIDModel):
     contractor = models.ForeignKey('accounts.ContractorInformation', on_delete=models.CASCADE)
     services = models.ManyToManyField(Service)
 
+
 class Review(UUIDModel):
     rating = models.PositiveSmallIntegerField(null=True, blank=True)
     description = models.TextField()
