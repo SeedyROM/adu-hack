@@ -1,4 +1,7 @@
 @charset "UTF-8";
+@font-face {
+  font-family: symbol;
+  src: url(../font/symbols.woff); }
 * {
   font-family: 'Roboto', sans-serif; }
 
@@ -119,31 +122,31 @@ nav {
   .jumbo h1 {
     font-size: 2em;
     margin: .67em 0;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); }
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
   .jumbo p {
     padding: 0.5em 1em;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 5px; }
 
 .aboutImg {
-  height: 8em;
-  width: 8em;
+  font-family: Symbol;
   margin: auto;
-  border-radius: 1em;
-  background: #93abb8; }
+  color: #e39959;
+  font-size: 2em; }
 
 .works {
   padding-top: 2em; }
   .works ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     width: 85%;
     margin: auto;
     text-align: center;
     flex-wrap: wrap; }
   .works li {
     flex: 1;
-    margin: 0 20px; }
+    margin: 0 20px;
+    max-width: 25%; }
 
 .sidebar {
   background: #fff;
@@ -242,6 +245,15 @@ nav {
 
 .stars li:nth-child(5)::after {
   background-image: url("../imgs/stars_1.svg"); }
+
+.works li:nth-child(1) .aboutImg::before {
+  content: ""; }
+
+.works li:nth-child(2) .aboutImg::before {
+  content: ""; }
+
+.works li:nth-child(3) .aboutImg::before {
+  content: ""; }
 
 .listPage {
   padding: 2rem;
