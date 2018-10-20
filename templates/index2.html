@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="jumbo">
+        <h1>ADU: Facilitating trust and community growth</h1>
+        <form action="{% url 'connections:searchTwo' %}" method="GET">
+            <input type="text" name="q" placeholder="Search for jobs...">
+        </form>
+        <p>Contractor? &nbsp;&nbsp;<a href="#">Login Here</a></p>
+    </section>
+    <section class="works">
+        <ul>
+            <li>
+                <div class="aboutImg"></div>
+                <p>Search top qualified contractors with experience delivering the services that you need to complete
+                    your project.</p>
+            </li>
+            <li>
+                <div class="aboutImg"></div>
+                <p>Let us do the heavy lifting! Create a job posting with the description and qualifications needed to get the job done. We
+                will post it to the best qualified contractors to connect to get the job done.</p>
+            </li>
+            <li>
+                <div class="aboutImg"></div>
+                <p>When you and your selected contractor are ready,
+                    we setup and manage an escrow account with your contractor
+                    so that you can feel confident in the job being done well.
+                </p>
+            </li>
+        </ul>
+    </section>
+{% endblock content %}

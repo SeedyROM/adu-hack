@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="mainContent listPage">
+    <aside class="sidebar">
+        <div class="services">
+            <h2 class="expand">Filter Services</h2>
+            <ul>
+                <li><input type="checkbox" value="Electrical">Electrical</li>
+                <li><input type="checkbox" value="Landscaping">Landscaping</li>
+                <li><input type="checkbox" value="Masonry">Masonry</li>
+                <li><input type="checkbox" value="Demolition">Demolition</li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="expand">Filter Stars</h2>
+            <ul class="stars">
+                <li><input type="checkbox" name="fiveStar"></li>
+                <li><input type="checkbox" name="fourStar"></li>
+                <li><input type="checkbox" name="threeStar"></li>
+                <li><input type="checkbox" name="twoStar"></li>
+                <li><input type="checkbox" name="oneStar"></li>
+            </ul>
+        </div>
+    </aside>
+
+    <section class="mainList">
+        <p class="smallText">2 search results</p>
+        <ul>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a>
+                            <h2>3025 SW Cedar Hills Blvd, Beaverton, OR 97005</h2>
+                        </a>
+                        <div class="rating">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                        </div>
+                    </div>
+                    <a href="#">Contact</a>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
+                    ex ea commodo consequat...</p>
+
+                    <div class="previewHeader">
+                        <div>
+                            <a>
+                                <h2>15901 SW Jenkins Rd, Aloha, OR 97006</h2>
+                            </a>
+                            <div class="rating">
+                                <img src="{% static 'imgs/filled_star.svg' %}">
+                                <img src="{% static 'imgs/filled_star.svg' %}">
+                                <img src="{% static 'imgs/filled_star.svg' %}">
+                                <img src="{% static 'imgs/filled_star.svg' %}">
+                                <img src="{% static 'imgs/empty_star.svg' %}">
+                                <img src="{% static 'imgs/empty_star.svg' %}">
+                            </div>
+                        </div>
+                        <a href="#">Contact</a>
+                    </div>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
+                        ex ea commodo consequat...</p>
+            </li>
+        </ul>
+    </section>
+
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+<script>
+    $('.expand').click(function () {
+        $(this).next().slideToggle(250)
+        $(this).toggleClass('closed')
+    });
+</script>
+{% endblock scripts %}
