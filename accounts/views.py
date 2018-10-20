@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import User, HomeOwnerInformation, ContractorInformation
+from .models import User, PropertyOwnerInformation, ContractorInformation
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.http import HttpResponse
