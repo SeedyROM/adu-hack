@@ -1,0 +1,125 @@
+<!--    Base header -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADU Hack</title>
+    <meta name="description" content="Description">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+</head>
+<body>
+
+<nav>
+    <a href="#"><img class="logo" src="static/imgs/logo.svg"></a>
+    <ul>
+        <li><a href="#">Username</a></li>
+    </ul>
+</nav>
+
+<!--    End base header -->
+
+<!-- body -->
+<div class="mainContent listPage">
+    <aside class="sidebar">
+        <div>
+            <h2 class="expand">Filter Services</h2>
+            <ul>
+                <li><input type="checkbox" name="Electrical">Electrical</li>
+                <li><input type="checkbox" name="Electrical">Electrical</li>
+                <li><input type="checkbox" name="Electrical">Electrical</li>
+                <li><input type="checkbox" name="Electrical">Electrical</li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="expand">Filter Stars</h2>
+            <ul class="stars">
+                <li><input type="checkbox" name="fiveStar"></li>
+                <li><input type="checkbox" name="fourStar"></li>
+                <li><input type="checkbox" name="threeStar"></li>
+                <li><input type="checkbox" name="twoStar"></li>
+                <li><input type="checkbox" name="oneStar"></li>
+            </ul>
+        </div>
+    </aside>
+
+    <section class="mainList">
+        <p class="smallText">562 search results</p>
+        <ul>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a><h2>Smith Jones</h2></a>
+                        <div class="rating">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/empty_star.svg">
+                            <img src="static/imgs/empty_star.svg">
+                        </div>
+                    </div>
+                    <a href="#">Contact</a>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
+                    ex ea commodo consequat...</p>
+            </li>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a><h2>Smith Jones</h2></a>
+                        <div class="rating">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/empty_star.svg">
+                            <img src="static/imgs/empty_star.svg">
+                        </div>
+                    </div>
+                    <a href="#">Contact</a>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
+                    ex ea commodo consequat...</p>
+            </li>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a><h2>Smith Jones</h2></a>
+                        <div class="rating">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/filled_star.svg">
+                            <img src="static/imgs/empty_star.svg">
+                            <img src="static/imgs/empty_star.svg">
+                        </div>
+                    </div>
+                    <a href="#">Contact</a>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunut aliquip
+                    ex ea commodo consequat...</p>
+            </li>
+        </ul>
+    </section>
+
+</div>
+<!-- End body -->
+
+
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script>
+    $('.expand').click(function () {
+        $(this).next().slideToggle('slow');
+        $(this).toggleClass('closed');
+    });
+</script>
+
+</body>
+</html>
