@@ -31,8 +31,21 @@ nav {
   justify-content: space-between;
   align-items: center;
   background: #fff;
+  border-bottom: 1px solid #cccc;
   .logo {
     height: 3em;
+  }
+
+  ul {
+    display: flex;
+
+    & > li {
+      margin-left: 1.75em;
+    }
+
+    a:hover {
+      border-bottom: 1px solid #333;
+    }
   }
 }
 
@@ -50,9 +63,26 @@ nav {
     color: #f0d371;
   }
   input {
-    width: 50%;
+    width: 95%;
+    font-size: 1.5em;
+    padding: 0.5em 1.25em;
+    outline: none;
+    //border: none;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 60px;
+    border: 3px solid #47E;
+  }
+
+  h1 {
     font-size: 2em;
-    padding: 7px;
+    margin: .67em 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    padding: 0.5em 1em;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
   }
 }
 
@@ -84,7 +114,6 @@ nav {
 }
 
 .sidebar {
-  grid-area: s;
   background: #fff;
   margin-top: 2em;
   input[type=checkbox] {
@@ -101,7 +130,7 @@ nav {
       content: "▼";
       position: absolute;
       right: 0;
-      transition: 1s;
+      transition: 0.3s;
     }
     &.closed::after {
       transform: rotate(-180deg);
@@ -145,12 +174,25 @@ nav {
   align-items: center;
   background: #e39959;
   border-bottom: solid #cd7c37;
+//=======
+//  align-items: flex-start;
+//  > a {
+//    color: #fff;
+//    flex-basis: 15%;
+//    height: 2em;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    background: #e39959;
+//    border-bottom: solid #cd7c37;
+//  }
+//>>>>>>> 278a6b1c7be5738c1985ed89e1ebb42d8b8159a1
 }
 
 .smallText {
   font-size: 0.8em;
   color: #7f7f7f;
-  margin: 0 10px;
+  margin: 1.5px 10px;
 }
 
 .medText {
@@ -182,13 +224,19 @@ nav {
 
 .mainList {
   h2 {
-    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0.75em;
     color: #e39959;
   }
   li {
     padding: 20px;
     background: #fff;
-    margin: 10px;
+    margin-right: 0;
+    margin-bottom: 1em;
+  }
+
+  li > p {
+    margin-bottom: 0.25rem;
   }
 }
 
@@ -200,7 +248,7 @@ nav {
 }
 
 .listPage {
-  padding: 2em;
+  padding: 2rem;
   background: #f3f3f3;
   height: 100%;
 }
@@ -263,15 +311,14 @@ header h1, .reviews h1 {
     grid-gap: 15px;
   }
 
-  .sidebar {
-    grid-area: s;
-  }
-
   .mainList {
     grid-area: c;
   }
 
   @media screen and (max-width: 700px) {
+    .sidebar {
+      grid-area: s;
+    }
     .listPage {
       grid-template-areas: "s s s s" "c c c c";
       grid-template-rows: auto 2fr;

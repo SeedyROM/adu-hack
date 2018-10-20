@@ -1,11 +1,16 @@
 from django.shortcuts import render
 
-# Create your views here.
+from accounts.models import User
+from accounts.models import ContractorInformation
+from connections.models import Service
+
 def search(request):
-    pass
+    contractors = User.objects.filter(user_type=User.CONTRACTOR)
+    popular_services = Service.top_5()
 
-def results(request):
-    pass
+    print(contractors)
 
-def profile(request):
-    pass
+    return render(request, 'connections/search.html', {
+        'services': popular_services,
+        'contractors': contractors,
+    })
