@@ -31,6 +31,10 @@ nav {
     & > li {
       margin-left: 1.75em;
     }
+
+    a:hover {
+      border-bottom: 1px solid #333;
+    }
   }
 }
 

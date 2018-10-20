@@ -24,6 +24,8 @@ nav {
     display: flex; }
     nav ul > li {
       margin-left: 1.75em; }
+    nav ul a:hover {
+      border-bottom: 1px solid #333; }
 
 .jumbo {
   height: 60vh;
