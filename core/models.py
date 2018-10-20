@@ -1,9 +1,7 @@
 import uuid
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
-from core.geocoding import geocode
+from core.geocoding import get_lat_lng
 
 
 class UUIDModel(models.Model):
@@ -28,9 +26,9 @@ class GeoLocationModel(models.Model):
 
     def save(self, *args, **kwargs):
         try:
-            results = geocode(self.address)
-            self.latitude = results[0]["geometry"]["location"]["lat"]
-            self.longitude = results[0]["geometry"]["location"]["lng"]
+            results = get_lat_lng(self.address)
+            self.latitude = results['result']['addressMatches'][0]['coordinates']['x']
+            self.longitude = results['result']['addressMatches'][0]['coordinates']['y']
         except AttributeError:
             raise GeocodeError('Failed to geocode model!')
         except IndexError:
