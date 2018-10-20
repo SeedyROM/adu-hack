@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Sign Up:</h1>
-<!-- FINISH THIS -->
-{% endblock content %
+<h1>Sign Up: owner</h1>
+    <form action="{% url 'accounts:register_property_owner_user' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% include 'accounts/partials/_register_common.html' %}
+        <input type="submit">
+    </form>
+{% endblock content %}
