@@ -1,34 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Login</h1>
 
-
-    <section class="works">
-        <div class="white">
-            <div class="artCont grey">
-                <p>Please log in</p>
-                <form method="POST" style="padding: 1.5em;" action="{% url 'accounts:login' %}"
+    <div class="center">
+        <section>
+            <p>Please log in</p>
+            <div>
+                <form method="POST" action="{% url 'accounts:login' %}"
                       class="pure-form pure-form-aligned">
                     {% csrf_token %}
                     <input type="hidden" name="next" value="{{ request.GET.next }}"/>
-                    <div class="pure-control-group">
-                        <label for="username">Username: </label>
-                        <input class="pure-input-1-2" id="username" type="text" name="username"
+                    <div>
+                        <input id="username" type="text" name="username"
                                placeholder="Username">
                     </div>
 
-                    <div class="pure-control-group" style="margin-bottom: 1em;">
-                        <label for="password">Password: </label>
-                        <input class="pure-input-1-2" id="password" type="password" name="password"
+                    <div>
+                        <input id="password" type="password" name="password"
                                placeholder="Password">
                     </div>
 
-                    <input class="orangeButton xlButton" type="submit" value="Log In">
+                    <input class="orangeBtn" type="submit" value="Log In">
                 </form>
 
+                <span>Don't have an account? <a href="{% url 'accounts:register_property_owner_user' %}">sign up here</a></span>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
 {% endblock content %}
