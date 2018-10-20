@@ -8,27 +8,27 @@ class InvalidUserType(BaseException):
 
 
 class User(UUIDModel, AbstractUser):
-    HOMEOWNER = 0
+    PROPERTY_OWNER = 0
     CONTRACTOR = 1
     STAFF = 2
 
     TYPE_CHOICES = (
-        (HOMEOWNER, 'Homeowner'),
+        (PROPERTY_OWNER, 'Property Owner'),
         (CONTRACTOR, 'Contractor'),
         (STAFF, 'Staff'),
     )
 
     user_type = models.PositiveSmallIntegerField(
         choices=TYPE_CHOICES, default=0)
-    contractor_information = models.ForeignKey(
+    contractor_information = models.OneToOneField(
         'accounts.ContractorInformation', blank=True, null=True, on_delete=models.CASCADE)
-    homeowner_information = models.ForeignKey(
-        'accounts.HomeOwnerInformation', blank=True, null=True, on_delete=models.CASCADE)
+    property_owner_information = models.OneToOneField(
+        'accounts.PropertyOwnerInformation', blank=True, null=True, on_delete=models.CASCADE)
 
     @property
     def information(self):
-        if user_type == HOMEOWNER:
-            return self.homeowner_information
+        if user_type == PROPERTY_OWNER:
+            return self.property_owner_information
         elif user_type == CONTRACTOR:
             return self.contractor_information
         elif user_type == STAFF:
@@ -37,8 +37,7 @@ class User(UUIDModel, AbstractUser):
             raise InvalidUserType('Invalid user type!')
 
 
-
-class HomeOwnerInformation(UUIDModel):
+class PropertyOwnerInformation(UUIDModel):
     pass
 
 

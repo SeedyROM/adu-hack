@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from connections.models import Site
+
+admin.site.register(Site)
