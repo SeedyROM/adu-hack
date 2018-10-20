@@ -42,10 +42,6 @@ class PropertyOwnerInformation(UUIDModel):
 
 
 class ContractorInformation(UUIDModel):
-    reviews = models.ForeignKey('accounts.Review')
+    services = models.ManyToManyField('connections.Service')
 
 
-class Review(UUIDModel):
-    user = models.ForeignKey(User)
-    contractor = models.ForeignKey(ContractorInformation)
-    rating = models.PositiveSmallIntegerField(default=3)
