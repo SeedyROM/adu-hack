@@ -23,7 +23,7 @@ nav {
   nav ul {
     display: flex; }
     nav ul > li {
-      margin-left: 1em; }
+      margin-left: 1.75em; }
 
 .jumbo {
   height: 60vh;
@@ -78,7 +78,7 @@ nav {
       content: "▼";
       position: absolute;
       right: 0;
-      transition: 1s; }
+      transition: 0.3s; }
     .sidebar h2.closed::after {
       transform: rotate(-180deg); }
 
@@ -100,7 +100,7 @@ nav {
 .previewHeader {
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: flex-start; }
   .previewHeader > a {
     color: #fff;
     flex-basis: 15%;
@@ -121,7 +121,8 @@ nav {
   margin: 0; }
 
 .mainList h2 {
-  margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0.75em;
   color: #e39959; }
 
 .mainList li {
@@ -146,7 +147,7 @@ nav {
   background-image: url("../imgs/stars_1.svg"); }
 
 .listPage {
-  padding: 2em;
+  padding: 2rem;
   background: #f3f3f3;
   height: 100%; }
 

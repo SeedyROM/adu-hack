@@ -86,3 +86,17 @@
 
 </div>
 {% endblock content %}
+
+{% block scripts %}
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+<script>
+    $('.expand').click(function () {
+        $(this).next().slideToggle(250)
+        $(this).toggleClass('closed')
+    });
+</script>
+{% endblock scripts %}

@@ -3,7 +3,7 @@ from django.shortcuts import render
 from accounts.models import ContractorInformation
 from connections.models import Service
 
-def mock_search(request):
+def search(request):
     contractors = ContractorInformation.objects.all()
     popular_services = Service.top_5()
 
