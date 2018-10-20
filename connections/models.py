@@ -3,6 +3,8 @@ from core.models import UUIDModel, GeoLocationModel
 
 
 class Site(UUIDModel, GeoLocationModel):
+    """Work site model, contains geocoded coords and address
+    """
     def __str__(self):
         return self.address
 

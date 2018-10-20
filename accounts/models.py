@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class InvalidUserType(BaseException):
+    """Handle invalid user_type value
+    """
     pass
 
 
@@ -38,6 +40,8 @@ class User(UUIDModel, AbstractUser):
 
     @property
     def information(self):
+        """Determine which information should be returned to the user
+        """
         if user_type == self.PROPERTY_OWNER:
             return self.property_owner_information
         elif user_type == self.CONTRACTOR:
