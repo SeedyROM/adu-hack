@@ -31,8 +31,9 @@ class Job(UUIDModel):
         related_name='jobs'
     )
     contractor = models.ForeignKey(
-        'accounts.ContractorInformation', on_delete=models.CASCADE)
+        'accounts.ContractorInformation', on_delete=models.CASCADE, blank=True, null=True)
     services = models.ManyToManyField(Service)
+    description = models.TextField()
 
 
 class Review(UUIDModel):
