@@ -42,4 +42,10 @@ class PropertyOwnerInformation(UUIDModel):
 
 
 class ContractorInformation(UUIDModel):
-    pass
+    reviews = models.ForeignKey('accounts.Review')
+
+
+class Review(UUIDModel):
+    user = models.ForeignKey(User)
+    contractor = models.ForeignKey(ContractorInformation)
+    rating = models.PositiveSmallIntegerField(default=3)
