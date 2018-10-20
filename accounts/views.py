@@ -22,5 +22,6 @@ def login_user(request):
     return render(request, 'accounts/login.html')
 
 
-# def login(request):
-#     return render(request, 'accounts/login.html')
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect('/')

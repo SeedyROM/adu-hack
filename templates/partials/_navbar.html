@@ -3,6 +3,11 @@
     <a href="{% url 'index' %}"><img class="logo" src="{% static 'imgs/logo.svg' %}"></a>
     <ul>
         <li><a href="{% url 'connections:search' %}">Search</a></li>
+        {% if user.is_authenticated %}
+        <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+        {% else %}
         <li><a href="{% url 'accounts:login' %}">Login</a></li>
+        {% endif %}
+
     </ul>
 </nav>
