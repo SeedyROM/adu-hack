@@ -6,4 +6,3 @@ admin.site.register(models.Site)
 admin.site.register(models.Job)
 admin.site.register(models.Service)
 admin.site.register(models.Review)
-
