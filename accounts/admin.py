@@ -1,4 +1,6 @@
 from django.contrib import admin
 
-from accounts.models import 
-# Register your models here.
+from accounts.models import PropertyOwnerInformation, ContractorInformation
+
+admin.site.register(PropertyOwnerInformation)
+admin.site.register(ContractorInformation)
