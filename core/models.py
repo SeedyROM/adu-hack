@@ -25,7 +25,7 @@ class GeoLocationModel(models.Model):
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
 
-    def save(self):
+    def save(self, *args, **kwargs):
         try:
             results = geocode(self.address)
             self.latitude = results[0]["geometry"]["location"]["lat"]
@@ -35,7 +35,8 @@ class GeoLocationModel(models.Model):
         except IndexError:
             print(f'Failed to find latitude/longitude for "{self.address}"')
 
-        super(GeoLocationModel, self).save()
+        # super(GeoLocationModel, self).save()
+        super().save(*args, **kwargs)
 
     class Meta:
         abstract = True
