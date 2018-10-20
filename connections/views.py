@@ -4,6 +4,7 @@ from accounts.models import User
 from accounts.models import ContractorInformation
 from connections.models import Service
 
+
 def search(request):
     contractors = User.objects.filter(user_type=User.CONTRACTOR)
     popular_services = Service.top_5()
