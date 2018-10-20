@@ -27,11 +27,11 @@ class User(UUIDModel, AbstractUser):
 
     @property
     def information(self):
-        if user_type == PROPERTY_OWNER:
+        if user_type == self.PROPERTY_OWNER:
             return self.property_owner_information
-        elif user_type == CONTRACTOR:
+        elif user_type == self.CONTRACTOR:
             return self.contractor_information
-        elif user_type == STAFF:
+        elif user_type == self.STAFF:
             return self
         else:
             raise InvalidUserType('Invalid user type!')
