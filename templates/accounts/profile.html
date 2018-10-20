@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>User Profile:</h1>
+    Username: {{ user.username }} <br>
+    Full Name: {{ user.name }} <br>
+    User Type: {{ user.get_user_type_display }} <br>
+
+    {% if user.get_user_type_display == 'Property Owner' %}
+        {% for j in user.information.jobs.all %}
+            i
+            <p>{{ j.completed }}</p>
+            <p>{{ j.site.address }}</p>
+            {% if j.contractor.name %}
+                <p>{{ j.contractor.name }}</p>
+            {% endif %}
+
+            {% for s in j.services.all %}
+                <div>
+                    <div>
+                        {{ s.name }}
+                    </div>
+                    <div>
+                        {{ s.description }}
+                    </div>
+                </div>
+            {% endfor %}
+
+            <p>{{ j.completed }}</p>
+
+        {% endfor %}
+    {% endif %}
+{% endblock content %}

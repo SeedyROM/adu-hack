@@ -18,6 +18,7 @@ class UUIDModel(models.Model):
 class GeocodeError(BaseException):
   pass
 
+
 class GeoLocationModel(models.Model):
     """An abstract model that stores an address and finds it's coords via geocoding
     """
