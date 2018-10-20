@@ -10,7 +10,7 @@ class InvalidUserType(BaseException):
 class User(UUIDModel, AbstractUser):
     HOMEOWNER = 0
     CONTRACTOR = 1
-    STAFF = 3
+    STAFF = 2
 
     TYPE_CHOICES = (
         (HOMEOWNER, 'Homeowner'),
@@ -28,13 +28,14 @@ class User(UUIDModel, AbstractUser):
     @property
     def information(self):
         if user_type == HOMEOWNER:
-            pass
+            return self.homeowner_information
         elif user_type == CONTRACTOR:
-            pass
+            return self.contractor_information
         elif user_type == STAFF:
-            pass
+            return self
         else:
-            raise InvalidUserType()
+            raise InvalidUserType('Invalid user type!')
+
 
 
 class HomeOwnerInformation(UUIDModel):
