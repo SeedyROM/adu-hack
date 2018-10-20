@@ -49,8 +49,12 @@ nav {
   border-bottom: solid #e9e9e9; }
   .jumbo a {
     color: #f0d371; }
+  .jumbo form {
+    width: 50%;
+    display: flex;
+    justify-content: center; }
   .jumbo input {
-    width: 95%;
+    width: 100%;
     font-size: 1.5em;
     padding: 0.5em 1.25em;
     outline: none;
