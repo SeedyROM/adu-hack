@@ -8,7 +8,7 @@ class AccountAdmin(UserAdmin):
     model = get_user_model()
 
     fieldsets = UserAdmin.fieldsets + (
-            (None, {'fields': ('property_owner_information', 'contractor_information',)}),
+            (None, {'fields': ('user_type', 'property_owner_information', 'contractor_information',)}),
     )
 
 admin.site.register(get_user_model(), AccountAdmin)
