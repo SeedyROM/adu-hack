@@ -20,6 +20,10 @@ nav {
   align-items: center; }
   nav .logo {
     height: 3em; }
+  nav ul {
+    display: flex; }
+    nav ul > li {
+      margin-left: 1em; }
 
 .jumbo {
   height: 60vh;

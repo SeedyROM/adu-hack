@@ -4,13 +4,12 @@
 {% block content %}
 <div class="mainContent listPage">
     <aside class="sidebar">
-        <div>
+        <div class="services">
             <h2 class="expand">Filter Services</h2>
             <ul>
-                <li><input type="checkbox" name="Electrical">Electrical</li>
-                <li><input type="checkbox" name="Electrical">Electrical</li>
-                <li><input type="checkbox" name="Electrical">Electrical</li>
-                <li><input type="checkbox" name="Electrical">Electrical</li>
+                {% for service in services %}
+                    <li><input type="checkbox" value="{{ service.name }}">{{ service.name }}</li>
+                {% endfor %}
             </ul>
         </div>
         <div>
