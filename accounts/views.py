@@ -3,6 +3,14 @@ from django.contrib.auth import logout
 from django.contrib.auth import authenticate, login
 
 
+def register_property_owner_user(request):
+    return render(request, 'accounts/register-owner.html', {})
+
+
+def register_contractor_user(request):
+    return render(request, 'accounts/register-contractor.html', {})
+
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -22,5 +30,6 @@ def login_user(request):
     return render(request, 'accounts/login.html')
 
 
-# def login(request):
-#     return render(request, 'accounts/login.html')
+def log_out(request):
+    logout(request)
+    return HttpResponseRedirect('/')

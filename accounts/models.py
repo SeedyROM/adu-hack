@@ -42,11 +42,11 @@ class User(UUIDModel, AbstractUser):
     def information(self):
         """Determine which information should be returned to the user
         """
-        if user_type == self.PROPERTY_OWNER:
+        if self.user_type == self.PROPERTY_OWNER:
             return self.property_owner_information
-        elif user_type == self.CONTRACTOR:
+        elif self.user_type == self.CONTRACTOR:
             return self.contractor_information
-        elif user_type == self.STAFF:
+        elif self.user_type == self.STAFF:
             return self
         else:
             raise InvalidUserType('Invalid user type!')

@@ -26,10 +26,14 @@ class Job(UUIDModel):
 
     site = models.OneToOneField(Site, on_delete=models.CASCADE)
     property_owner = models.ForeignKey(
-        'accounts.PropertyOwnerInformation', on_delete=models.CASCADE)
+        'accounts.PropertyOwnerInformation',
+        on_delete=models.CASCADE,
+        related_name='jobs'
+    )
     contractor = models.ForeignKey(
-        'accounts.ContractorInformation', on_delete=models.CASCADE)
+        'accounts.ContractorInformation', on_delete=models.CASCADE, blank=True, null=True)
     services = models.ManyToManyField(Service)
+    description = models.TextField()
 
 
 class Review(UUIDModel):
