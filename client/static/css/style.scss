@@ -49,8 +49,13 @@ nav {
   }
   input {
     width: 100%;
-    font-size: 2em;
-    padding: 7px;
+    font-size: 1.5em;
+    padding: 0.5em 1.25em;
+    outline: none;
+    border: none;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 60px;
+
   }
 
   h1 {
@@ -94,7 +99,6 @@ nav {
 }
 
 .sidebar {
-  grid-area: s;
   background: #fff;
   margin-top: 2em;
   input[type=checkbox] {
@@ -159,7 +163,7 @@ nav {
 .smallText {
   font-size: 0.8em;
   color: #7f7f7f;
-  margin: 0 10px;
+  margin: 1.5px 10px;
 }
 
 .medText {
@@ -231,10 +235,6 @@ nav {
     display: grid;
     grid-template-areas: "s c c c" "s c c c";
     grid-gap: 15px;
-  }
-
-  .sidebar {
-    grid-area: s;
   }
 
   .mainList {
