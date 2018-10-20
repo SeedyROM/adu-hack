@@ -119,10 +119,12 @@ nav {
 .mainList h2 {
   margin-bottom: 0;
   color: #e39959; }
+
 .mainList li {
   padding: 20px;
   background: #fff;
-  margin: 10px; }
+  margin-right: 0;
+  margin-bottom: 1em; }
 
 .stars li:nth-child(1)::after {
   background-image: url("../imgs/stars_5.svg"); }
@@ -150,30 +152,26 @@ nav {
 @media screen and (max-width: 700px) {
   .listPage {
     flex-direction: column; }
-
   .sidebar {
     display: flex;
     justify-content: center;
     margin: 10px; } }
+
 @media screen and (max-height: 600px) {
   .listPage {
     height: auto; } }
+
 @supports (display: grid) {
   .listPage {
     display: grid;
     grid-template-areas: "s c c c" "s c c c";
     grid-gap: 15px; }
-
   .sidebar {
     grid-area: s; }
-
   .mainList {
     grid-area: c; }
-
   @media screen and (max-width: 700px) {
     .listPage {
       grid-template-areas: "s s s s" "c c c c";
       grid-template-rows: auto 2fr;
       justify-content: center; } } }
-
-/*# sourceMappingURL=style.css.map */
