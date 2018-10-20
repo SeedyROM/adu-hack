@@ -126,7 +126,7 @@ nav {
 
 .jumbo {
   height: 60vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.17), rgba(0, 0, 0, 0.17)), url(../imgs/homeImg.jpg) center;
+  background: linear-gradient(rgba(0, 0, 0, 0.31), rgba(0, 0, 0, 0.17)), url(../imgs/homeImg.jpg) center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -149,7 +149,7 @@ nav {
     outline: none;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
     border-radius: 60px;
-    border: 3px solid #47E;
+    border: 3px solid #e39959;
   }
 
   h1 {
@@ -366,6 +366,17 @@ header h1, .reviews h1 {
     padding: 20px;
     background: #f3f3f3;
     margin: 10px;
+  }
+}
+
+.center .loginWrap {
+  height: auto;
+  form {
+    padding: 20px;
+    padding-bottom: 0;
+    input:not(.orangeBtn) {
+      margin: 20px 0;
+    }
   }
 }
 
