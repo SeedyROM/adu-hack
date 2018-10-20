@@ -13,6 +13,7 @@ class Chat(UUIDModel, models.Model):
     class Meta:
         ordering = ['timestamp']
 
+
 class Message(UUIDModel, models.Model):
     chat = models.ForeignKey('Chat', on_delete=models.CASCADE, related_name='messages')
     author = models.ForeignKey('accounts.User', on_delete=models.CASCADE)
