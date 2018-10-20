@@ -38,10 +38,10 @@ class User(UUIDModel, AbstractUser):
 
 
 class PropertyOwnerInformation(UUIDModel):
-    pass
+    reviews = models.ManyToManyField('connections.Review')    
 
 
 class ContractorInformation(UUIDModel):
     services = models.ManyToManyField('connections.Service')
-
+    reviews = models.ManyToManyField('connections.Review')
 

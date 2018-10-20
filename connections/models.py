@@ -1,6 +1,5 @@
 from django.db import models
 from core.models import UUIDModel, GeoLocationModel
-from accounts.models import PropertyOwnerInformation, ContractorInformation
 
 
 class Site(UUIDModel, GeoLocationModel):
@@ -15,10 +14,14 @@ class Service(UUIDModel):
 
 class Job(UUIDModel):
     completed = models.BooleanField(default=False)
-    rating = models.PositiveSmallIntegerField(null=True, blank=True)
 
     site = models.OneToOneField(Site, on_delete=models.CASCADE)
-    property_owner = models.ForeignKey(PropertyOwnerInformation, on_delete=models.CASCADE)
-    contractor = models.ForeignKey(ContractorInformation, on_delete=models.CASCADE)
+    property_owner = models.ForeignKey('accounts.PropertyOwnerInformation', on_delete=models.CASCADE)
+    contractor = models.ForeignKey('accounts.ContractorInformation', on_delete=models.CASCADE)
     services = models.ManyToManyField(Service)
 
+class Review(UUIDModel):
+    rating = models.PositiveSmallIntegerField(null=True, blank=True)
+    description = models.TextField()
+    contractor = models.OneToOneField('accounts.ContractorInformation', on_delete=models.CASCADE)    
+    job = models.OneToOneField(Job, on_delete=models.CASCADE)
