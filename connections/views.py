@@ -15,3 +15,7 @@ def search(request):
         'services': popular_services,
         'contractors': contractors,
     })
+
+
+def searchTwo(request):
+    return render(request, 'connections/search2.html')

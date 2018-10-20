@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <header>
+        <div>
+            <h1>Smith Jones</h1>
+            <div class="rating">
+                <img src="{% static 'imgs/filled_star.svg' %}">
+                <img src="{% static 'imgs/filled_star.svg' %}">
+                <img src="{% static 'imgs/filled_star.svg' %}">
+                <img src="{% static 'imgs/filled_star.svg' %}">
+                <img src="{% static 'imgs/empty_star.svg' %}">
+                <img src="{% static 'imgs/empty_star.svg' %}">
+            </div>
+            <ul class="skills">
+                <li>Electrical</li>
+                <li>Digging</li>
+                <li>Foundation</li>
+            </ul>
+            <p>Smith Jones Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunut aliquip ex ea commodo consequat. Olum dolore eu
+                feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+                praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+                cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+                erat
+                volutpat. Ut wisi enim ad minim veniam. suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="contractorContact">
+            <a class="orangeBtn" href="#">Contact</a>
+            <ul>
+                <li>(112) 112- 1112</li>
+                <li>smithjones@gmail.com</li>
+                <li>03521 SW John St<br>
+                    Portland, OR 97219
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="reviews">
+        <h1>Reviews</h1>
+        <ul>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a><h2>Sally Jane</h2></a>
+                        <div class="rating">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                        </div>
+                    </div>
+                </div>
+                <p>Smith Jones Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunut aliquip ex ea commodo consequat. Olum dolore eu
+                    feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit</p>
+            </li>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a><h2>Mike Hall</h2></a>
+                        <div class="rating">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                        </div>
+                    </div>
+                </div>
+                <p>Smith Jones Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunut aliquip ex ea commodo consequat. Olum dolore eu
+                    feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit</p>
+            </li>
+            <li>
+                <div class="previewHeader">
+                    <div>
+                        <a><h2>Phil Ham</h2></a>
+                        <div class="rating">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/filled_star.svg' %}">
+                            <img src="{% static 'imgs/empty_star.svg' %}">
+                        </div>
+                    </div>
+                </div>
+                <p>Smith Jones Bio... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunut aliquip ex ea commodo consequat. Olum dolore eu
+                    feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit</p>
+            </li>
+        </ul>
+    </section>
+
+{% endblock content %}

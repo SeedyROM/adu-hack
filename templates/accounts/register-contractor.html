@@ -2,13 +2,14 @@
 
 {% block content %}
     <div class="center">
-        <section>
-            <h1>Contractor Registration:</h1>
+        <section class="loginWrap">
+            <p>Contractor Registration:</p>
             <form action="{% url 'accounts:register_contractor_user' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {% include 'accounts/partials/_register_common.html' %}
                 <input class="orangeBtn" type="submit">
             </form>
+            <span>Already have an account? <a href="{% url 'accounts:login' %}">log in here</a></span>
         </section>
     </div>
 {% endblock content %}

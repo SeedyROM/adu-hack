@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import User, PropertyOwnerInformation, ContractorInformation
 
 
+def smithjones(request):
+    return render(request, 'accounts/contractor-profile.html', {})
+
 def register_property_owner_user(request):
     if request.method == 'POST':
         user = User()

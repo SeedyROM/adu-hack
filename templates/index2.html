@@ -3,12 +3,11 @@
 {% block content %}
     <section class="jumbo">
         <h1>ADU: Facilitating trust and community growth</h1>
-        <form action="{% url 'connections:search' %}" method="post">
-            {% csrf_token %}
-            <input type="submit" name="q" value="Search for contractors...">
+        <form action="{% url 'connections:searchTwo' %}" method="GET">
+            <input type="text" name="q" placeholder="Search for jobs...">
         </form>
         {% if not user.is_authenticated %}
-            <p>Contractor? &nbsp;&nbsp;<a href="{% url 'accounts:login' %}">Login Here</a></p>
+            <p>Homeowner? &nbsp;&nbsp;<a href="#">Login Here</a></p>
         {% endif %}
     </section>
     <section class="works">
