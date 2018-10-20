@@ -11,8 +11,8 @@ def index(request):
 
 def login(request):
 	if request.method == 'POST':
-		username = request['username']
-		password = request['password']
+		username = request.POST['username']
+		password = request.POST['password']
 		authenticate(username, password)
 		if user:
 			if user.is_active:
@@ -28,9 +28,9 @@ def logout(request):
 
 def create_acc(request):
 	if request.method == 'POST':
-		in_email = request['email']
-		in_username = request['username']
-		in_password = request['password']
+		in_email = request.POST['email']
+		in_username = request.POST['username']
+		in_password = request.POST['password']
 		in_user = User(username=in_username, email=in_email, password=in_password)
 		in_user.save()
 	return HttpResponse(reverse('accounts:index'))
