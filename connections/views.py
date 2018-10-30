@@ -6,6 +6,9 @@ from connections.models import Service
 
 
 def search(request):
+    if request.user.is_authenticated and request.user.user_type == 0:
+        jobs = request.user.information.jobs.filter(completed=False)
+
     contractors = User.objects.filter(user_type=User.CONTRACTOR)
     popular_services = Service.top_5()
 
